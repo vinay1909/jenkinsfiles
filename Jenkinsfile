@@ -1,7 +1,5 @@
 #!/usr/bin/env groovy
 
-agent any 
-
 properties([
  parameters([ 
   choice( choices:['non-prod', 'prod'], name:"Environment"),
