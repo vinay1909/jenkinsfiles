@@ -1,25 +1,16 @@
 #!/usr/bin/env groovy
-import cicd.Util;
-   agent any
-    parameters {
-        choice(name: "Environment", choices:["Preprod","Prod","staging"])
-        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
-    }
-   stages {
-      stage('Hello') {
-         steps {
-            sh 'python3 --version'
-            sh 'echo "lets see!"'
-	    sh "bash harry.sh"
-	    sh "echo ${params.Environment}"
-         script {
-             def browsers=["chrome", "firefox"]
-             for (int i=0; i<browsers.size();i++) {
-                 echo "testing the ${browsers[i]}"
-             }
-         }
-	deleteDir()
-         }
-      }
-   }
+
+properties([
+ parameters([
+  choice( choices:['non-prod', 'prod'], name:"Environment"),
+  string(name: "Loopvalue", value="5")
+  ])
+])
+
+stages {
+ stage("First") {
+  def rang= 1..${params.Loopvalue}
+  println "Numbers are ${rang}"
+ }
+}
 
