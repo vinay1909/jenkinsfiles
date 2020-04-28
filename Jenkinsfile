@@ -3,12 +3,10 @@
 pipeline {
   agent any
 
-options([
- parameters([ 
+parameters {
   choice( choices:['non-prod', 'prod'], name:"Environment"),
   string( name: "Loopvalue", defaultValue="5"),
-  ])
-])
+}
 
 stages {
  stage("First") {
