@@ -3,7 +3,7 @@
 properties([
  parameters([
   choice( choices:['non-prod', 'prod'], name:"Environment"),
-  string(name: "Loopvalue", value="5")
+  string( name: "Loopvalue", defaultValue="5")
   ])
 ])
 
