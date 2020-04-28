@@ -17,8 +17,8 @@ pipeline {
                  echo "testing the ${browsers[i]}"
              }
          }
+	deleteDir()
          }
-      deleteDir()
       }
    }
 }
