@@ -1,4 +1,5 @@
-pipeline {
+#!/usr/bin/env groovy
+import cicd.Util;
    agent any
     parameters {
         choice(name: "Environment", choices:["Preprod","Prod","staging"])
@@ -21,5 +22,4 @@ pipeline {
          }
       }
    }
-}
 
