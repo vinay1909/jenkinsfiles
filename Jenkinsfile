@@ -10,6 +10,7 @@ pipeline {
             sh 'python3 --version'
             sh 'echo "lets see!"'
 	    sh "bash harry.sh"
+	    sh "echo ${params.Environment}"
          script {
              def browsers=["chrome", "firefox"]
              for (int i=0; i<browsers.size();i++) {
