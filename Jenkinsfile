@@ -1,5 +1,6 @@
 #!/usr/bin/env groovy
 
+pipeline {
 properties([
  parameters([ 
   choice( choices:['non-prod', 'prod'], name:"Environment"),
@@ -13,4 +14,4 @@ stages {
   println "Numbers are ${rang}"
  }
 }
-
+}
