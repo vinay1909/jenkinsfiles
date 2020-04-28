@@ -9,7 +9,7 @@ pipeline {
          steps {
             sh 'python3 --version'
             sh 'echo "lets see!"'
-	    sh("harry.sh")
+	    sh "bash harry.sh"
          script {
              def browsers=["chrome", "firefox"]
              for (int i=0; i<browsers.size();i++) {
